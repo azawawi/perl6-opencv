@@ -1,7 +1,7 @@
 # OpenCV
 [![Build Status](https://travis-ci.org/azawawi/perl6-opencv.svg?branch=master)](https://travis-ci.org/azawawi/perl6-opencv)
 
-This is an experimental attempt for a decent C++ API binding for [OpenCV](http://opencv.org).
+This provides a growing C++ wrapper for [OpenCV](http://opencv.org) API.
 
 ## Usage
 
