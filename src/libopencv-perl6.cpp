@@ -39,6 +39,10 @@ extern "C" {
     cv::namedWindow(winname, flags);
   }
 
+  void cv_highgui_moveWindow(char *winname, int x, int y) {
+    cv::moveWindow(winname, x, y);
+  }
+
   void cv_highgui_waitKey(int delay) {
     cv::waitKey(delay);
   }

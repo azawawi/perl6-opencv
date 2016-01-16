@@ -61,6 +61,11 @@ sub cv_highgui_namedWindow(Str $winname, uint32 $flags)
   is export
   { * }
 
+sub cv_highgui_moveWindow(Str $winname, Int $x, Int $y)
+  is native(&library)
+  is export
+  { * }
+
 sub cv_highgui_waitKey(uint32 $delay)
   returns int32
   is native(&library)

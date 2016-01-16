@@ -7,13 +7,16 @@ use OpenCV::Photo;
 
 # Read image data
 my $filename = "examples/images/aero1.jpg";
-my OpenCV::Mat $img = imread($filename, 1);
+my OpenCV::Mat $img = imread($filename);
 my $data = $img.data;
 die "Could not read $filename" unless $data;
 
 # Print dimensions
 say "Matrix cols = " ~ $img.cols;
 say "Matrix rows = " ~ $img.rows;
+
+# Read grayscale version
+my OpenCV::Mat $grayscale_img = imread($filename, 0);
 
 # De-noise (i.e. remove noise) in a new cloned image
 my OpenCV::Mat $denoised_img = $img.clone;
@@ -22,6 +25,11 @@ fastNlMeansDenoisingColored($img, $denoised_img, 10, 10, 7, 21);
 # Show original image
 namedWindow("Original", 1);
 imshow("Original", $img);
+
+# Show grayscale version
+namedWindow("Grayscale", 1);
+moveWindow("Grayscale", 100, 100);
+imshow("Grayscale", $grayscale_img);
 
 # Show denoised image
 namedWindow("Denoised", 1);
