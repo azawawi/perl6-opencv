@@ -1,0 +1,8 @@
+language: perl6
+perl6:
+    - 2015.12
+    - latest
+
+install:
+    - rakudobrew build-panda
+    - panda update && panda install LibraryMake
