@@ -20,4 +20,5 @@ nytprof.out
 /_eumm/
 resources
 lib/.precomp
+.precomp
 src/Makefile

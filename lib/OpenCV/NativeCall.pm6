@@ -15,63 +15,59 @@ sub library {
 # library at compile time, while we need it to happen at runtime (because
 # this library is installed *after* being compiled).
 
-sub imread(Str $filename, int32 $flags)
-  returns Pointer
-  is native(&library)
-  is export
-  { * }
-
-sub mat_rows(Pointer $img)
+sub cv_mat_rows(Pointer $img)
   returns uint32
   is native(&library)
   is export
   { * }
 
-sub mat_cols(Pointer $img)
+sub cv_mat_cols(Pointer $img)
   returns uint32
   is native(&library)
   is export
   { * }
 
-sub mat_data(Pointer $img)
+sub cv_mat_data(Pointer $img)
   returns Pointer
   is native(&library)
   is export
   { * }
 
-sub mat_clone(Pointer $img)
+sub cv_mat_clone(Pointer $img)
   returns Pointer
   is native(&library)
   is export
   { * }
 
-sub imwrite(Str $filename, Pointer $img)
+sub cv_highgui_imread(Str $filename, int32 $flags)
+  returns Pointer
+  is native(&library)
+  is export
+  { * }
+
+sub cv_highgui_imwrite(Str $filename, Pointer $img)
   returns uint32 
   is native(&library)
   is export
   { * }
 
-# void imshow(const string& winname, InputArray mat)
-sub imshow(Str $filename, Pointer $mat)
+sub cv_highgui_imshow(Str $filename, Pointer $mat)
   is native(&library)
   is export
   { * }
 
-# void namedWindow(const string& winname, int flags=WINDOW_AUTOSIZE )
-sub namedWindow(Str $winname, uint32 $flags)
+sub cv_highgui_namedWindow(Str $winname, uint32 $flags)
   is native(&library)
   is export
   { * }
 
-# int waitKey(int delay=0)¶
-sub waitKey(uint32 $delay)
+sub cv_highgui_waitKey(uint32 $delay)
   returns int32
   is native(&library)
   is export
   { * }
 
-# TODO try num32 (C float) for $h and $hColor didnt work 
-sub fastNlMeansDenoisingColored(
+sub cv_photo_fastNlMeansDenoisingColored(
     Pointer $src,
     Pointer $dst,
     uint32 $h, 
