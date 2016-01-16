@@ -1,7 +1,7 @@
 
 use v6;
 
-unit class OpenCV::Mat;
+unit class OpenCV::Mat:ver<0.0.1>:auth<github:azawawi>;
 
 use NativeCall;
 use OpenCV::NativeCall;

@@ -1,7 +1,7 @@
 
 use v6;
 
-unit module OpenCV::Photo;
+unit module OpenCV::Photo:ver<0.0.1>:auth<github:azawawi>;
 
 use NativeCall;
 use OpenCV::NativeCall;

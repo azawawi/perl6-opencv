@@ -1,6 +1,6 @@
 {
   "name"        : "OpenCV",
-  "version"     : "*",
+  "version"     : "0.0.1",
   "description" : "OpenCV Bindings using NativeCall",
   "depends"     : [ "LibraryMake" ],
   "provides"    : {
