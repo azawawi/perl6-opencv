@@ -17,7 +17,7 @@ namedWindow( "Sample", 1 );
 imshow( "Sample", $image );
 
 # Wait for a key press to exit
-waitKey(0);
+waitKey;
 ```
 
 For more examples, please see the [examples](examples) folder.
