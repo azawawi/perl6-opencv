@@ -3,8 +3,6 @@
 
 #include <opencv2/opencv.hpp>
 
-using namespace std;
-
 extern "C" {
 
   ulong imread(char *filename, int flags ) {
@@ -59,7 +57,5 @@ extern "C" {
     cv::fastNlMeansDenoisingColored(
       srcMat, dstMat, h, hColor, templateWindowSize, searchWindowSize);
   }
-   
 
 }
-
