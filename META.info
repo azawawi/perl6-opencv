@@ -4,6 +4,8 @@
   "perl"        : "v6.0.0",
   "description" : "OpenCV Bindings using NativeCall",
   "depends"     : [ "LibraryMake" ],
+  "auth"        : "github:azawawi",
+  "authors"     : [ "Ahmad M. Zawawi" ],
   "provides"    : {
     "OpenCV"             : "lib/OpenCV.pm6",
     "OpenCV::NativeCall" : "lib/OpenCV/NativeCall.pm6",
