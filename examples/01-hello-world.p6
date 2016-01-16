@@ -1,6 +1,8 @@
 #!/usr/bin/env perl6
 
+use v6;
 use lib 'lib';
+use NativeCall;
 use OpenCV::Mat;
 use OpenCV::Highgui;
 use OpenCV::Photo;
@@ -32,13 +34,30 @@ moveWindow("Grayscale", 100, 100);
 resizeWindow("Grayscale", 320, 240);
 imshow("Grayscale", $grayscale_img);
 
+my Int $slider_value = 5;
+sub onChange(uint32 $value, OpaquePointer $) {
+  $slider_value = $value;
+}
+createTrackbar("Value", "Original", $slider_value, 100, &onChange);
+
 # Show denoised image
 namedWindow("Denoised", 1);
 imshow("Denoised", $denoised_img);
 
 imwrite("denoised.png", $denoised_img);
 
-# Wait for a keypress from the user
-waitKey(0);
+# Wait for ESC from the user
+my Int $last_slider_value = -1;
+while True {
+  if $slider_value != $last_slider_value {
+    my $percentage = $slider_value / 100.0;
+    resizeWindow("Grayscale", Int(320 * $percentage), Int(240 * $percentage));
+    imshow("Grayscale", $grayscale_img);
+
+    $last_slider_value = $slider_value;
+  }
+
+  last if waitKey(1) == 27;
+}
 
 destroyAllWindows;

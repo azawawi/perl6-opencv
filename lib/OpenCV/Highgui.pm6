@@ -45,3 +45,10 @@ sub destroyWindow(Str $winname) is export {
 sub destroyAllWindows is export {
   cv_highgui_destroyAllWindows();
 }
+
+sub createTrackbar(
+  Str $trackbarname, Str $winname, Int $value, Int $count, &onChange:(uint32, OpaquePointer)) returns Int is export
+{
+    return cv_highgui_createTrackbar($trackbarname, $winname, $value, $count, &onChange);
+}
+

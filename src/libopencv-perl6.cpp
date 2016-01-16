@@ -64,6 +64,12 @@ extern "C" {
     cv::destroyAllWindows();
   }
 
+  void cv_highgui_createTrackbar(char *trackbarname, char *winname, int value, int count, cv::TrackbarCallback onChange) {
+    static int *pValue = new int;
+    *pValue = value;
+    cv::createTrackbar(trackbarname, winname, pValue, count, onChange);
+  }
+
   void cv_photo_fastNlMeansDenoisingColored(
     char* src,
     char* dst,

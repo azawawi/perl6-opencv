@@ -62,12 +62,12 @@ sub cv_highgui_namedWindow(Str $winname, uint32 $flags)
   is export
   { * }
 
-sub cv_highgui_moveWindow(Str $winname, Int $x, Int $y)
+sub cv_highgui_moveWindow(Str $winname, uint32 $x, uint32 $y)
   is native(&library)
   is export
   { * }
 
-sub cv_highgui_resizeWindow(Str $winname, Int $width, Int $height)
+sub cv_highgui_resizeWindow(Str $winname, uint32 $width, uint32 $height)
   is native(&library)
   is export
   { * }
@@ -85,6 +85,13 @@ sub cv_highgui_destroyWindow(Str $winname)
 
 sub cv_highgui_destroyAllWindows
   is native(&library)
+  is export
+  { * }
+
+# void (*)(int, void*)
+sub cv_highgui_createTrackbar(Str $trackbarname, Str $winname, uint32 $value, uint32 $count, &onChange (int32, OpaquePointer))
+  is native(&library)
+  returns uint32
   is export
   { * }
 
