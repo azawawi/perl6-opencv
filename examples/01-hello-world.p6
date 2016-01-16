@@ -1,10 +1,5 @@
 #!/usr/bin/env perl6
 
-#
-# How to run it:
-# $ make && LD_LIBRARY_PATH=. examples/hello-world.p6
-#
-
 use lib 'lib';
 use OpenCV::NativeCall;
 
