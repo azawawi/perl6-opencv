@@ -27,8 +27,9 @@ namedWindow("Original", 1);
 imshow("Original", $img);
 
 # Show grayscale version
-namedWindow("Grayscale", 1);
+namedWindow("Grayscale", 0);
 moveWindow("Grayscale", 100, 100);
+resizeWindow("Grayscale", 320, 240);
 imshow("Grayscale", $grayscale_img);
 
 # Show denoised image
@@ -39,3 +40,5 @@ imwrite("denoised.png", $denoised_img);
 
 # Wait for a keypress from the user
 waitKey(0);
+
+destroyAllWindows;

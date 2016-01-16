@@ -67,8 +67,23 @@ sub cv_highgui_moveWindow(Str $winname, Int $x, Int $y)
   is export
   { * }
 
+sub cv_highgui_resizeWindow(Str $winname, Int $width, Int $height)
+  is native(&library)
+  is export
+  { * }
+
 sub cv_highgui_waitKey(uint32 $delay)
   returns int32
+  is native(&library)
+  is export
+  { * }
+
+sub cv_highgui_destroyWindow(Str $winname)
+  is native(&library)
+  is export
+  { * }
+
+sub cv_highgui_destroyAllWindows
   is native(&library)
   is export
   { * }

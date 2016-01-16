@@ -48,8 +48,20 @@ extern "C" {
     cv::moveWindow(winname, x, y);
   }
 
+  void cv_highgui_resizeWindow(char *winname, int width, int height) {
+    cv::moveWindow(winname, width, height);
+  }
+
   void cv_highgui_waitKey(int delay) {
     cv::waitKey(delay);
+  }
+
+  void cv_highgui_destroyWindow(char *winname) {
+    cv::destroyWindow(winname);
+  }
+
+  void cv_highgui_destroyAllWindows() {
+    cv::destroyAllWindows();
   }
 
   void cv_photo_fastNlMeansDenoisingColored(

@@ -30,6 +30,18 @@ sub moveWindow(Str $winname, Int $x, Int $y) is export {
   cv_highgui_moveWindow($winname, $x, $y);
 }
 
+sub resizeWindow(Str $winname, Int $width, Int $height) is export {
+  cv_highgui_resizeWindow($winname, $width, $height);
+}
+
 sub waitKey(Int $delay = 0) is export {
   cv_highgui_waitKey($delay);
+}
+
+sub destroyWindow(Str $winname) is export {
+  cv_highgui_destroyWindow($winname);
+}
+
+sub destroyAllWindows is export {
+  cv_highgui_destroyAllWindows();
 }
