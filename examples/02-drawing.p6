@@ -22,13 +22,25 @@ namedWindow("Camelia", 1);
 
 while True {
 
+  # Random starting coordinates
   my $x = (0..$width-1).pick;
   my $y = (0..$height-1).pick;
+
+  # Draw a randomly colored and sized rectangle
   rectangle(
     $img,
     $x, $y,
     $x+(5..10).pick,
     $y+(5..10).pick,
+    (0..255).pick, (0..255).pick, (0..255).pick,
+    -1);
+
+  # Draw a randomly colored and sized circle
+  $x = (0..$width-1).pick;
+  $y = (0..$height-1).pick;
+  circle(
+    $img,
+    $x, $y, (5..10).pick,
     (0..255).pick, (0..255).pick, (0..255).pick,
     -1);
   imshow("Camelia", $img);

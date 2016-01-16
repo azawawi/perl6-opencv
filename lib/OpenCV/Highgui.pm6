@@ -65,3 +65,15 @@ sub rectangle(
     $lineType, $shift);
 }
 
+sub circle(
+  OpenCV::Mat $mat,
+  Int $cx, Int $cy, Int $radius,
+  Int $b, Int $g, Int $r,
+  Int $thickness = 1,
+  Int $lineType  = 8,
+  Int $shift     = 0
+) is export
+{
+  cv_highgui_circle($mat.native_obj, $cx, $cy, $radius, $b, $g, $r, $thickness,
+    $lineType, $shift);
+}

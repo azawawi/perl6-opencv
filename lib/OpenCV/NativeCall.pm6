@@ -119,3 +119,15 @@ sub cv_highgui_rectangle(
   is export
   is native(&library)
   { * }
+
+sub cv_highgui_circle(
+    Pointer $img,
+    uint32 $cx, uint32 $cy, uint32 $radius,
+    uint32 $b, uint32 $g, uint32 $r,
+    uint32 $thickness,
+    uint32 $lineType,
+    uint32 $shift
+  )
+  is export
+  is native(&library)
+  { * }

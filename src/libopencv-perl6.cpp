@@ -90,6 +90,26 @@ extern "C" {
     );
   }
 
+  void cv_highgui_circle(
+      ulong mat,
+      int cx, int cy, int radius,
+      int b, int g, int r,
+      int thickness,
+      int lineType,
+      int shift
+  ) {
+    cv::Mat& matz   = *((cv::Mat*)mat);
+    cv::circle(
+        matz,
+        cv::Point(cx, cy),
+        radius,
+        cv::Scalar(b, g, r),
+        thickness,
+        lineType,
+        shift
+    );
+  }
+
   void cv_photo_fastNlMeansDenoisingColored(
     char* src,
     char* dst,
