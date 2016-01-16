@@ -88,7 +88,6 @@ sub cv_highgui_destroyAllWindows
   is export
   { * }
 
-# void (*)(int, void*)
 sub cv_highgui_createTrackbar(Str $trackbarname, Str $winname, uint32 $value,
     uint32 $count, &onChange (int32, OpaquePointer))
   is native(&library)
@@ -105,6 +104,18 @@ sub cv_photo_fastNlMeansDenoisingColored(
     uint32 $searchWindowSize
   )
   returns int32
+  is export
+  is native(&library)
+  { * }
+
+sub cv_highgui_rectangle(
+    Pointer $img,
+    uint32 $x1, uint32 $y1, uint32 $x2, uint32 $y2,
+    uint32 $b, uint32 $g, uint32 $r,
+    uint32 $thickness,
+    uint32 $lineType,
+    uint32 $shift
+  )
   is export
   is native(&library)
   { * }

@@ -70,6 +70,26 @@ extern "C" {
     cv::createTrackbar(trackbarname, winname, pValue, count, onChange);
   }
 
+  void cv_highgui_rectangle(
+      ulong mat,
+      int x1, int y1, int  x2, int y2,
+      int b, int g, int r,
+      int thickness,
+      int lineType,
+      int shift
+  ) {
+    cv::Mat& matz   = *((cv::Mat*)mat);
+    cv::rectangle(
+        matz,
+        cv::Point(x1, y1),
+        cv::Point(x2, y2),
+        cv::Scalar(b, g, r),
+        thickness,
+        lineType,
+        shift
+    );
+  }
+
   void cv_photo_fastNlMeansDenoisingColored(
     char* src,
     char* dst,

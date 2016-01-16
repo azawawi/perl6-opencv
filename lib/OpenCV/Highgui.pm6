@@ -49,6 +49,19 @@ sub destroyAllWindows is export {
 sub createTrackbar(Str $trackbarname, Str $winname, Int $value, Int $count,
   &onChange:(uint32, OpaquePointer)) returns Int is export
 {
-    return cv_highgui_createTrackbar($trackbarname, $winname, $value, $count, &onChange);
+  return cv_highgui_createTrackbar($trackbarname, $winname, $value, $count, &onChange);
+}
+
+sub rectangle(
+  OpenCV::Mat $mat,
+  Int $x1, Int $y1, Int $x2, Int $y2,
+  Int $b, Int $g, Int $r,
+  Int $thickness = 1,
+  Int $lineType  = 8,
+  Int $shift     = 0
+) is export
+{
+  cv_highgui_rectangle($mat.native_obj, $x1, $y1, $x2, $y2, $b, $g, $r, $thickness,
+    $lineType, $shift);
 }
 
