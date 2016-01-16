@@ -9,10 +9,12 @@ This provides a growing C++ wrapper for [OpenCV](http://opencv.org) API.
 use v6;
 use OpenCV::Highgui;
 
-# Read the image from the disk and display it in a window
+# Read the image from the disk
 my $image = imread( "sample.png" );
-namedWindow("Sample", 1);
-imshow("Sample", $image);
+
+# Show the image in a window
+namedWindow( "Sample", 1 );
+imshow( "Sample", $image );
 
 # Wait for a key press to exit
 waitKey(0);
