@@ -1,0 +1,10 @@
+{
+	"name"        : "OpenCV",
+	"version"     : "*",
+	"description" : "OpenCV Bindings using NativeCall",
+	"depends"     : [ "LibraryMake" ],
+	"provides"    : {
+		"OpenCV"    : "lib/OpenCV.pm6"
+	},
+	"source-url"  : "git://github.com/azawawi/perl6-opencv.git"
+}
