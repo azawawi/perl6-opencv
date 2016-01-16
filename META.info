@@ -5,7 +5,7 @@
 	"depends"     : [ "LibraryMake" ],
 	"provides"    : {
 		"OpenCV"             : "lib/OpenCV.pm6",
-		"OpenCV::NativeCall" : "lib/OpenCV/NativeCall.pm6",
+		"OpenCV::NativeCall" : "lib/OpenCV/NativeCall.pm6"
 	},
 	"source-url"  : "git://github.com/azawawi/perl6-opencv.git"
 }
