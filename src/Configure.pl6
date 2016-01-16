@@ -9,6 +9,10 @@ use v6;
 use LibraryMake;
 
 my $destdir = '../resources';
+
+# Make destination folder if it does not exist
+mkdir $destdir unless $destdir.IO ~~ :e;
+
 my %vars = get-vars($destdir);
 process-makefile('.', %vars);
 

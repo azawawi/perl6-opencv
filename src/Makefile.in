@@ -1,2 +1,4 @@
-all: 
-	g++ -Wall -shared -fPIC -o libopencv-perl6.so.1 opencv-perl6.cpp -lopencv_highgui -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml -lopencv_video -lopencv_features2d -lopencv_calib3d -lopencv_objdetect -lopencv_contrib -lopencv_legacy -lopencv_stitching -lopencv_photo
+all: %DESTDIR%/libopencv-perl6%SO%
+
+%DESTDIR%/libopencv-perl6%SO%: libopencv-perl6.cpp
+	g++ -Wall -shared -fPIC %LDOUT%%DESTDIR%/libopencv-perl6%SO% libopencv-perl6.cpp -lopencv_highgui -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml -lopencv_video -lopencv_features2d -lopencv_calib3d -lopencv_objdetect -lopencv_contrib -lopencv_legacy -lopencv_stitching -lopencv_photo

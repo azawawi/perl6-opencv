@@ -8,7 +8,6 @@ use LibraryMake;
 # Find our compiled library.
 sub library {
     my $so = get-vars('')<SO>;
-    say ~(%?RESOURCES{"libopencv-perl6$so"});
     return ~(%?RESOURCES{"libopencv-perl6$so"});
 }
 
