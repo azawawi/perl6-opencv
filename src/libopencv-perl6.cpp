@@ -10,6 +10,11 @@ extern "C" {
     return (ulong)new cv::Mat(mat);
   }
   
+  int cv_highgui_imwrite(char *filename, char *mat) {
+    cv::Mat& matz   = *((cv::Mat*)mat);
+    return cv::imwrite(filename, matz);
+  }
+
   int cv_mat_rows(char *mat) {
     cv::Mat *t = (cv::Mat *)mat;
     return t->rows;
@@ -46,7 +51,7 @@ extern "C" {
   void cv_highgui_waitKey(int delay) {
     cv::waitKey(delay);
   }
-  
+
   void cv_photo_fastNlMeansDenoisingColored(
     char* src,
     char* dst,

@@ -45,6 +45,7 @@ sub cv_highgui_imread(Str $filename, int32 $flags)
   is export
   { * }
 
+#TODO implement Pointer params
 sub cv_highgui_imwrite(Str $filename, Pointer $img)
   returns uint32 
   is native(&library)

@@ -35,5 +35,7 @@ imshow("Grayscale", $grayscale_img);
 namedWindow("Denoised", 1);
 imshow("Denoised", $denoised_img);
 
+imwrite("denoised.png", $denoised_img);
+
 # Wait for a keypress from the user
 waitKey(0);
