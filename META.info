@@ -7,8 +7,6 @@
 		"OpenCV"             : "lib/OpenCV.pm6",
 		"OpenCV::NativeCall" : "lib/OpenCV/NativeCall.pm6"
 	},
-	"resources" : [
-	    "libopencv-perl6.so"
-	],
+	"resources"   : [ "libopencv-perl6.so" ],
 	"source-url"  : "git://github.com/azawawi/perl6-opencv.git"
 }
