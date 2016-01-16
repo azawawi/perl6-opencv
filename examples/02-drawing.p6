@@ -21,7 +21,7 @@ say "Camelia height = " ~ $height;
 namedWindow("Camelia", 1);
 
 while True {
-  
+
   my $x = (0..$width-1).pick;
   my $y = (0..$height-1).pick;
   rectangle(
