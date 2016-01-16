@@ -89,7 +89,8 @@ sub cv_highgui_destroyAllWindows
   { * }
 
 # void (*)(int, void*)
-sub cv_highgui_createTrackbar(Str $trackbarname, Str $winname, uint32 $value, uint32 $count, &onChange (int32, OpaquePointer))
+sub cv_highgui_createTrackbar(Str $trackbarname, Str $winname, uint32 $value,
+    uint32 $count, &onChange (int32, OpaquePointer))
   is native(&library)
   returns uint32
   is export
