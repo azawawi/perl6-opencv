@@ -5,7 +5,10 @@
   "depends"     : [ "LibraryMake" ],
   "provides"    : {
     "OpenCV"             : "lib/OpenCV.pm6",
-    "OpenCV::NativeCall" : "lib/OpenCV/NativeCall.pm6"
+    "OpenCV::NativeCall" : "lib/OpenCV/NativeCall.pm6",
+    "OpenCV::Highgui"    : "lib/OpenCV/Highgui.pm6",
+    "OpenCV::Mat"        : "lib/OpenCV/Mat.pm6",
+    "OpenCV::Photo"      : "lib/OpenCV/Photo.pm6"
   },
   "resources" : [
     "libopencv-perl6.so"
