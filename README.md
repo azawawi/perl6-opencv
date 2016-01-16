@@ -35,6 +35,14 @@ To run tests:
 
     prove -e 'perl6 -Ilib'
 
+## Development Notes
+
+If you need to change the C++ to C library wrapper without doing a
+`panda install .`,, please run:
+```
+$ (cd src; ./Configure.pl6; make)
+```
+
 ## Author
 
 Ahmad M. Zawawi, azawawi on #perl6, https://github.com/azawawi/
