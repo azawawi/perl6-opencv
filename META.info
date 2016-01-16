@@ -1,6 +1,7 @@
 {
   "name"        : "OpenCV",
   "version"     : "0.0.1",
+  "perl"        : "v6.0.0",
   "description" : "OpenCV Bindings using NativeCall",
   "depends"     : [ "LibraryMake" ],
   "provides"    : {
