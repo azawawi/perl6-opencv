@@ -3,9 +3,22 @@
 
 This provides a growing C++ wrapper for [OpenCV](http://opencv.org) API.
 
-## Usage
+## Example
 
-please see the [examples](examples) folder.
+```Perl6
+use v6;
+use OpenCV::Highgui;
+
+# Read the image from the disk and display it in a window
+my $image = imread( "sample.png" );
+namedWindow("Sample", 1);
+imshow("Sample", $image);
+
+# Wait for a key press to exit
+waitKey(0);
+```
+
+For more examples, please see the [examples](examples) folder.
 
 ## OpenCV Installation
 
