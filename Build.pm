@@ -6,9 +6,15 @@ use Shell::Command;
 class Build is Panda::Builder {
     method build($workdir) {
         if $*DISTRO.is-win {
-          say "Precompiled binary will be used. Disabling build on windows";
-          return;
+          # On windows, let us install the bundled DLL version, Panda will
+          # hopefully copy the DLL for us.
+          say "Precompiled bundled OpenCV DLL will be installed";
+
+          # Success
+          return 1;
         }
+
+        # on Unix, let us try to make it
         my $makefiledir = "$workdir/src";
         my $destdir = "$workdir/resources";
         mkpath $destdir;
