@@ -35,7 +35,8 @@ Please follow the instructions below based on your platform:
 
 ## Windows
 
-TODO add windows support and instructions
+A precompiled 64-bit windows DLL binary is already provided so it should work
+on 64-bit windows operating systems.
 
 ## Installation
 
