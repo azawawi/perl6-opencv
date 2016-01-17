@@ -11,7 +11,7 @@ $dest_folder.IO.mkdir unless $dest_folder.IO ~~ :e;
 
 my $SYSTEM_LIB = "user32.lib Gdi32.lib advapi32.lib";
 
-# Path environment variables
+# Patch environment variables for Microsoft C++ compiler to work
 %*ENV<Path>   ~= ';C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\amd64';
 %*ENV<INCLUDE> = 'C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\INCLUDE';
 %*ENV<LIB>     = 'C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\LIB\amd64;C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x64;';
