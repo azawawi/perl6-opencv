@@ -1,7 +1,7 @@
 
 use v6;
 
-unit module OpenCV::Highgui:ver<0.0.1>:auth<github:azawawi>;
+unit module OpenCV::Highgui:ver<0.0.2>:auth<github:azawawi>;
 
 use NativeCall;
 use OpenCV::NativeCall;
