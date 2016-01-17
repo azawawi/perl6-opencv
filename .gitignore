@@ -17,6 +17,9 @@ nytprof.out
 /pm_to_blib
 *.o
 *.bs
+*.exp
+*.lib
+*.obj
 /_eumm/
 resources/libopencv-perl6.so
 lib/.precomp
