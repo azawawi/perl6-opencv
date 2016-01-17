@@ -9,7 +9,13 @@ my $OPENCV_LIBPATH = "$OPENCV_BUILD/x64/vc12/staticlib";
 my $dest_folder = "../resources";
 $dest_folder.IO.mkdir unless $dest_folder.IO ~~ :e;
 
-my $SYSTEM_LIB = "user32.lib Gdi32.lib mswsock.lib rpcrt4.lib advapi32.lib psapi.lib iphlpapi.lib";
-my $cmd = "cl  /EHsc -I\"$OPENCV_INCLUDE\" /nologo /MT /Ox /GL /DNDEBUG  /DWIN32 /DAO_ASSUME_WINDOWS98 libopencv-perl6.cpp /LD /DLL /link /LIBPATH:\"$OPENCV_LIBPATH\" $SYSTEM_LIB $OPENCV_LIB /OUT:../resources/libopencv-perl6.dll";
+my $SYSTEM_LIB = "user32.lib Gdi32.lib advapi32.lib";
+
+# Path environment variables
+%*ENV<Path>   ~= ';C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\amd64';
+%*ENV<INCLUDE> = 'C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\INCLUDE';
+%*ENV<LIB>     = 'C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\LIB\amd64;C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x64;';
+
+my $cmd        = qq{cl.exe /EHsc -I"$OPENCV_INCLUDE" /nologo /MT /Ox /GL /DNDEBUG  /DWIN32 /DAO_ASSUME_WINDOWS98 libopencv-perl6.cpp /LD /DLL /link /LIBPATH:"$OPENCV_LIBPATH" $SYSTEM_LIB $OPENCV_LIB /OUT:../resources/libopencv-perl6.dll};
 say $cmd;
 shell($cmd);
