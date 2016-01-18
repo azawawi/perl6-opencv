@@ -1,5 +1,7 @@
 language: perl6
 
+dist: trusty
+
 perl6:
     - 2015.12
     - latest
