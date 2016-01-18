@@ -3,9 +3,7 @@
 use v6;
 use lib 'lib';
 use NativeCall;
-use OpenCV::Mat;
-use OpenCV::Highgui;
-use OpenCV::Photo;
+use OpenCV;
 
 # Read image data
 my $filename = "examples/images/aero1.jpg";

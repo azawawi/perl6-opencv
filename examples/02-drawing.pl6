@@ -2,10 +2,7 @@
 
 use v6;
 use lib 'lib';
-use NativeCall;
-use OpenCV::Mat;
-use OpenCV::Highgui;
-use OpenCV::Photo;
+use OpenCV;
 
 my $filename        = "examples/images/camelia-logo.png";
 my OpenCV::Mat $img = imread( $filename );
