@@ -1,5 +1,6 @@
 # OpenCV
 [![Build Status](https://travis-ci.org/azawawi/perl6-opencv.svg?branch=master)](https://travis-ci.org/azawawi/perl6-opencv)
+[![Build status](https://ci.appveyor.com/api/projects/status/github/azawawi/perl6-opencv?svg=true)](https://ci.appveyor.com/project/azawawi/perl6-opencv/branch/master)
 
 This provides a growing C++ wrapper for [OpenCV](http://opencv.org) API.
 
