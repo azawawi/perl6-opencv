@@ -17,9 +17,5 @@ build: off
 
 test_script:
   - prove -v -e "perl6 -Ilib" t/
-  - perl6 -Ilib bin/zef --verbose install .
-  - SET PATH=%APPVEYOR_BUILD_FOLDER%\..\rakudo\install\share\perl6\site\bin;%PATH%
-  - cd %APPVEYOR_BUILD_FOLDER%\..
-  - zef --verbose --force install Zef
 
 shallow_clone: true
