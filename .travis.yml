@@ -9,4 +9,4 @@ before_install:
 
 install:
     - rakudobrew build-panda
-    - panda update && panda install LibraryMake
+    - panda installdeps .
