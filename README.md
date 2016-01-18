@@ -49,7 +49,7 @@ To install it using Panda (a module management tool bundled with Rakudo Star):
 
 To run tests:
 
-    prove -e "perl6 -Ilib"
+    prove -ve "perl6 -Ilib"
 
 ## Development Notes
 
