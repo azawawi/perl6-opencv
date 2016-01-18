@@ -7,7 +7,7 @@ This provides a growing C++ wrapper for [OpenCV](http://opencv.org) API.
 
 ```Perl6
 use v6;
-use OpenCV::Highgui;
+use OpenCV;
 
 # Read the image from the disk
 my $image = imread( "sample.png" );
