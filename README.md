@@ -54,9 +54,9 @@ To run tests:
 ## Development Notes
 
 If you need to change the C++ to C library wrapper without doing a
-`panda install .`,, please run:
+`panda install .`, please run:
 ```
-$ (rm resources/*.so; cd src; ./Configure.pl6; make)
+$ panda-build
 ```
 
 ## Author

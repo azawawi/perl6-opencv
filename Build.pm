@@ -1,7 +1,5 @@
 use Panda::Common;
 use Panda::Builder;
-use LibraryMake;
-use Shell::Command;
 
 class Build is Panda::Builder {
     method build($workdir) {
@@ -17,7 +15,13 @@ class Build is Panda::Builder {
         # on Unix, let us try to make it
         my $makefiledir = "$workdir/src";
         my $destdir = "$workdir/resources";
-        mkpath $destdir;
-        make($makefiledir, $destdir);
+        $destdir.IO.mkdir;
+
+        my @libs = <opencv_highgui opencv_core opencv_imgproc opencv_ml
+          opencv_video opencv_features2d opencv_calib3d opencv_objdetect
+          opencv_contrib opencv_legacy opencv_stitching opencv_photo>;
+        my $libs = @libs.map( { "-l$_" } ).join(' ');
+        shell("g++ -Wall -shared -fPIC -o $destdir/libopencv-perl6.so " ~
+          "src/libopencv-perl6.cpp $libs");
     }
 }

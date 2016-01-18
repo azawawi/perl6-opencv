@@ -3,7 +3,7 @@
   "version"       : "0.0.2",
   "perl"          : "v6",
   "description"   : "OpenCV Bindings using NativeCall",
-  "build-depends" : [ "LibraryMake" ],
+  "build-depends" : [ ],
   "depends"       : [ ],
   "auth"          : "github:azawawi",
   "authors"       : [ "Ahmad M. Zawawi" ],

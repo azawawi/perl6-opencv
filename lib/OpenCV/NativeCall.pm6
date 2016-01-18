@@ -3,12 +3,12 @@ use v6;
 unit module OpenCV::NativeCall:ver<0.0.2>:auth<github:azawawi>;
 
 use NativeCall;
-use LibraryMake;
 
 # Find our compiled library.
 sub library {
-    my $so = get-vars('')<SO>;
-    return ~(%?RESOURCES{"libopencv-perl6$so"});
+    my $lib-name = sprintf($*VM.config<dll>, "opencv-perl6");
+    say $lib-name;
+    return ~(%?RESOURCES{$lib-name});
 }
 
 # 'is native(&library)' is needed so it will call the function and resolve the
