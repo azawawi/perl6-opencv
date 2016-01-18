@@ -2,7 +2,7 @@ language: perl6
 perl6:
     - 2015.12
     - latest
-
+sudo: true
 before_install:
     - sudo apt-get -qq update
     - sudo apt-get install -y libopencv-dev
