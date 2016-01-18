@@ -43,7 +43,7 @@ sub destroyWindow(Str $winname) is export {
 }
 
 sub destroyAllWindows is export {
-  cv_highgui_destroyAllWindows();
+  cv_highgui_destroyAllWindows;
 }
 
 sub createTrackbar(Str $trackbarname, Str $winname, Int $value, Int $count,

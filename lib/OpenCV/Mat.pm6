@@ -8,19 +8,19 @@ use OpenCV::NativeCall;
 
 has Pointer $.native_obj;
 
-method rows() returns Int {
+method rows returns Int {
   return cv_mat_rows($.native_obj);
 }
 
-method cols() returns Int {
+method cols returns Int {
   return cv_mat_cols($.native_obj);
 }
 
-method data() returns Pointer {
+method data returns Pointer {
   return cv_mat_data($.native_obj);
 }
 
-method clone() returns OpenCV::Mat {
+method clone returns OpenCV::Mat {
   my $native_obj = cv_mat_clone($.native_obj);
   return OpenCV::Mat.new( native_obj => $native_obj );
 }
