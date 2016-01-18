@@ -2,7 +2,8 @@
 [![Build Status](https://travis-ci.org/azawawi/perl6-opencv.svg?branch=master)](https://travis-ci.org/azawawi/perl6-opencv)
 [![Build status](https://ci.appveyor.com/api/projects/status/github/azawawi/perl6-opencv?svg=true)](https://ci.appveyor.com/project/azawawi/perl6-opencv/branch/master)
 
-This provides a growing C++ wrapper for [OpenCV](http://opencv.org) API.
+This provides a simple Perl 6 object-oriented NativeCall wrapper for the
+[OpenCV](http://opencv.org) library.
 
 ## Example
 
