@@ -35,11 +35,6 @@ Please follow the instructions below based on your platform:
 $ sudo apt-get install libopencv-dev g++
 ```
 
-## Windows
-
-A precompiled 64-bit windows DLL binary is already provided so it should work
-on 64-bit windows operating systems.
-
 ## macOS
 
 - To install OpenCV 2.4 development libraries, please run:
@@ -48,6 +43,11 @@ $ brew update
 $ brew tap homebrew/science
 $ brew install opencv
 ```
+
+## Windows
+
+A precompiled 64-bit windows DLL binary is already provided so it should work
+on 64-bit windows operating systems.
 
 ## Installation
 
