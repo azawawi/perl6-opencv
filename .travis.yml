@@ -1,5 +1,9 @@
 language: perl6
 
+# Needed to get OpenCV 2.4 libraries
+dist: trusty
+sudo: required
+
 os:
   - linux
   - osx
