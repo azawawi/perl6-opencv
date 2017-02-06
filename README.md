@@ -44,8 +44,8 @@ on 64-bit windows operating systems.
 
 - To install OpenCV 2.4 development libraries, please run:
 ```
-$ brew tap homebrew/science
 $ brew update
+$ brew tap homebrew/science
 $ brew install opencv
 ```
 
