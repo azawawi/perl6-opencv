@@ -7,11 +7,21 @@ perl6:
     - 2017.01
     - latest
 
+before_install:
+  - echo $TRAVIS_OS_NAME
+  # For Linux
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get -qq update           ; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get install libopencv-dev ; fi
+  # For macOS
+  - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then brew update                       ; fi
+  - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then brew install opencv2                ; fi
+
 install:
-    - sudo apt-get -qq update
-    - sudo apt-get install -y libopencv-dev
-    - rakudobrew build zef
+  - rakudobrew build zef
+  - zef --depsonly install .
+  - zef install Test::META
+  - zef build .
 
 script:
-    - zef build .
-    - prove -e "perl6 -Ilib"
+    - AUTHOR_TESTING=1 prove -ve "perl6 -Ilib"
+    - zef install .
