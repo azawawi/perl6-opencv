@@ -14,9 +14,9 @@
     "OpenCV::Photo"      : "lib/OpenCV/Photo.pm6"
   },
   "resources"     : [
-    "opencv-perl6.dll"
+    "opencv-perl6.dll",
     "libopencv-perl6.dylib",
-    "libopencv-perl6.so",
+    "libopencv-perl6.so"
   ],
   "source-url"    : "git://github.com/azawawi/perl6-opencv.git"
 }
