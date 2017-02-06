@@ -1,6 +1,6 @@
 {
   "name"          : "OpenCV",
-  "version"       : "0.0.3",
+  "version"       : "0.0.4",
   "perl"          : "6.c",
   "description"   : "OpenCV Bindings using NativeCall",
   "auth"          : "github:azawawi",
