@@ -42,10 +42,9 @@ on 64-bit windows operating systems.
 
 ## Installation
 
-To install it using Panda (a module management tool bundled with Rakudo Star):
+To install it using zef (a module management tool bundled with Rakudo Star):
 
-    panda update
-    panda install OpenCV
+    zef install OpenCV
 
 ## Testing
 
@@ -56,9 +55,9 @@ To run tests:
 ## Development Notes
 
 If you need to change the C++ to C library wrapper without doing a
-`panda install .`, please run:
+`zef install .`, please run:
 ```
-$ panda-build
+$ zef build .
 ```
 
 ## Author

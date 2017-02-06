@@ -10,6 +10,8 @@ perl6:
 install:
     - sudo apt-get -qq update
     - sudo apt-get install -y libopencv-dev
-    - rakudobrew build-panda
+    - rakudobrew build zef
 
-script: panda-build && prove -e perl6 t
+script:
+    - zef build .
+    - prove -e "perl6 -Ilib"
