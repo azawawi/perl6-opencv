@@ -14,7 +14,7 @@
     "OpenCV::Photo"      : "lib/OpenCV/Photo.pm6"
   },
   "resources"     : [
-    "opencv-perl6.dll",
+    "libopencv-perl6.dll",
     "libopencv-perl6.dylib",
     "libopencv-perl6.so"
   ],

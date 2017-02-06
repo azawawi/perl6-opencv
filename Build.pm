@@ -19,6 +19,12 @@ method build($workdir) {
     my $destdir = "$workdir/resources";
     $destdir.IO.mkdir;
 
+    # Create empty resources files for all platforms so that package managers
+    # do not complain
+    for <dll dylib so> -> $ext {
+      "$destdir/libopencv-perl6.$ext".IO.spurt("");
+    }
+
     my @libs = <opencv_highgui opencv_core opencv_imgproc opencv_ml
       opencv_video opencv_features2d opencv_calib3d opencv_objdetect
       opencv_contrib opencv_legacy opencv_stitching opencv_photo>;
