@@ -1,20 +1,24 @@
-dist: trusty
-sudo: required
-
 language: perl6
 
+os:
+  - linux
+  - osx
+
 perl6:
-    - 2017.01
-    - latest
+  - 2017.01
+  - latest
 
 before_install:
   - echo $TRAVIS_OS_NAME
-  # For Linux
+
+  # Install OpenCV development libraries (Linux)
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get -qq update           ; fi
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get install libopencv-dev ; fi
-  # For macOS
+
+  # Install OpenCV development libraries (macOS)
+  - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then brew tap homebrew/science         ; fi
   - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then brew update                       ; fi
-  - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then brew install opencv2                ; fi
+  - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then brew install opencv               ; fi
 
 install:
   - rakudobrew build zef
@@ -23,5 +27,5 @@ install:
   - zef build .
 
 script:
-    - AUTHOR_TESTING=1 prove -ve "perl6 -Ilib"
-    - zef install .
+  - AUTHOR_TESTING=1 prove -ve "perl6 -Ilib"
+  - zef install .
