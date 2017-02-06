@@ -23,8 +23,12 @@ method build($workdir) {
       opencv_video opencv_features2d opencv_calib3d opencv_objdetect
       opencv_contrib opencv_legacy opencv_stitching opencv_photo>;
     my $libs = @libs.map( { "-l$_" } ).join(' ');
-    shell("g++ -Wall -shared -fPIC -o $destdir/libopencv-perl6.so " ~
-      "src/libopencv-perl6.cpp $libs");
+    my $libname = sprintf($*VM.config<dll>, "opencv-perl6");
+    if $*DISTRO.name eq "macosx" {
+      shell("g++ -Wall -shared -fPIC -I/usr/local/include -L/usr/local/lib -o $destdir/$libname src/libopencv-perl6.cpp $libs");
+    } else {
+      shell("g++ -Wall -shared -fPIC -o $destdir/$libname src/libopencv-perl6.cpp $libs");
+    }
 }
 
 # only needed for older versions of panda
